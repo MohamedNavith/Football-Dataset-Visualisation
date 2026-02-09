@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-dark text-white;
+  font-family: sans-serif;
+}
+
+/* Glass effect for cards */
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { @apply bg-dark; }
+::-webkit-scrollbar-thumb { @apply bg-slate-700 rounded-full; }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Stats Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>⚽ Football Stats (2014-2020)</h1>
+    </header>
+
+    <div class="container">
+        <div class="filters">
+            <select id="leagueFilter"><option value="All">All Leagues</option><option value="EPL">EPL</option><option value="LaLiga">La Liga</option></select>
+            <select id="teamFilter"><option value="All">All Teams</option></select>
+            <select id="posFilter"><option value="All">All Positions</option></select>
+            <input type="text" id="nameSearch" placeholder="Search Player...">
+            <input type="number" id="minMins" placeholder="Min Minutes">
+            <input type="number" id="minGoals" placeholder="Min Goals">
+            <button onclick="applyFilters()">Search</button>
+        </div>
+
+        <div class="info-bar">
+            <span id="resultCount">Loading...</span>
+            <div class="pagination">
+                <button onclick="changePage(-1)">Prev</button>
+                <span id="pageInfo">1</span>
+                <button onclick="changePage(1)">Next</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th onclick="sort('full_name')">Name</th>
+                        <th onclick="sort('team')">Team</th>
+                        <th onclick="sort('position')">Pos</th>
+                        <th onclick="sort('minutes')">Mins</th>
+                        <th onclick="sort('goals')">Goals</th>
+                        <th onclick="sort('assists')">Ast</th>
+                        <th onclick="sort('xg')">xG</th>
+                        <th onclick="sort('xg_per90')">xG/90</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
